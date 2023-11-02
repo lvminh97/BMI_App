@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:bmi_app/controller/HomeController.dart';
 import 'package:bmi_app/view/widget/MyButton.dart';
 import 'package:bmi_app/view/widget/MyTextField.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +15,26 @@ class HomeScreen extends StatefulWidget {
 
 class HomeScreenState extends State<HomeScreen> {
 
+  late HomeController _controller;
+  late TextEditingController heightTxtController, weightTxtController;
+
   @override
   void initState() {
+    _controller = HomeController(this);
+    _controller.init();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)?.settings.arguments;
+    if(args != null) {
+      args as Map;
+      if(args.containsKey("height") && args.containsKey("weight")) {
+        heightTxtController.text = "${args["height"]}";
+        weightTxtController.text = "${args["weight"]}";
+      }
+  }
     return WillPopScope(
       onWillPop: () async {
         return false;
@@ -32,14 +46,51 @@ class HomeScreenState extends State<HomeScreen> {
           ),
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: (MediaQuery.of(context).viewInsets.bottom == 0) ? 7.5.h : 0
+                ),
+                SizedBox(
+                  width: 90.w,
+                  height: (MediaQuery.of(context).viewInsets.bottom == 0) ? 8.h : 0,
+                  child: Stack(
+                    children: [
+                      Container(
+                        alignment: Alignment.center,
+                        child: Text(
+                          "CHỈ SỐ BMI",
+                          style: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.blue
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        right: 0,
+                        bottom: 0,
+                        width: 15.w,
+                        height: 8.h,
+                        child: MyButton(
+                          onPressed: () {},
+                          pressedStyle: TextButton.styleFrom(
+                            backgroundColor: Colors.blue.shade100
+                          ),
+                          child: const Image(
+                            image: AssetImage("assets/images/vietnam_flag.png"),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(height: 5.h),
                 Row(
                   children: [
                     Container(
                       margin: EdgeInsets.only(left: 2.w, right: 10.w),
                       width: 40.w,
-                      height: 50.h,
+                      height: 45.h,
                       child: const FittedBox(
                         fit: BoxFit.fill,
                         child: Image(
@@ -65,7 +116,7 @@ class HomeScreenState extends State<HomeScreen> {
                             margin: EdgeInsets.only(top: 1.5.h, bottom: 5.h),
                             alignment: Alignment.center,
                             width: 40.w,
-                            child: MyTextField("", TextEditingController(), textSize: 12.sp, maxLines: 1, () => null, (str) => null, kbType: TextInputType.number),
+                            child: MyTextField("", heightTxtController, textSize: 12.sp, maxLines: 1, () => null, (str) => null, kbType: TextInputType.number),
                           ),
                           SizedBox(
                             width: 40.w,
@@ -80,7 +131,7 @@ class HomeScreenState extends State<HomeScreen> {
                           Container(
                             margin: EdgeInsets.only(top: 1.5.h),
                             width: 40.w,
-                            child: MyTextField("", TextEditingController(), textSize: 12.sp, maxLines: 1, () => null, (str) => null, kbType: TextInputType.number),
+                            child: MyTextField("", weightTxtController, textSize: 12.sp, maxLines: 1, () => null, (str) => null, kbType: TextInputType.number),
                           )
                         ]
                       ),
@@ -88,21 +139,25 @@ class HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 5.h),
+                  margin: EdgeInsets.only(
+                    top: (MediaQuery.of(context).viewInsets.bottom == 0) ? 5.h : 2.h
+                  ),
                   width: 85.w,
                   child: MyButton(
-                    onPressed: () {
-                      
-                    },
+                    onPressed: _controller.getResult,
                     style: TextButton.styleFrom(
-                      padding: EdgeInsets.only(left: 8.w, top: 1.5.h, right: 8.w, bottom: 1.5.h),
+                      padding: EdgeInsets.only(left: 8.w, top: 2.h, right: 8.w, bottom: 2.h),
                       backgroundColor: Colors.blue
+                    ),
+                    pressedStyle: TextButton.styleFrom(
+                      padding: EdgeInsets.only(left: 8.w, top: 2.h, right: 8.w, bottom: 2.h),
+                      backgroundColor: Colors.blue.shade300
                     ),
                     child: Text(
                       "Tính toán",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 12.sp
+                        fontSize: 14.sp
                       ),
                     ),
                   )

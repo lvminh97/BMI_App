@@ -17,7 +17,7 @@ class MyButton extends StatelessWidget {
   int _count = 0;
   final ValueNotifier<bool> _isPressedNtf = ValueNotifier(false);
 
-  MyButton({super.key, required this.child, this.onPressed, this.onLongPress, this.longPressTime = 1000, this.style, this.pressedStyle});
+  MyButton({super.key, required this.child, this.onPressed, this.onLongPress, this.longPressTime = 9999999, this.style, this.pressedStyle});
 
   @override
   Widget build(BuildContext context) {
