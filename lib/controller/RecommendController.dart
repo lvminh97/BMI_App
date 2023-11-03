@@ -1,8 +1,8 @@
 // ignore_for_file: unused_field
 
 import 'package:bmi_app/view/ResultScreen.dart';
-import 'package:bmi_app/view/widget/html/heading.dart';
-import 'package:bmi_app/view/widget/html/text.dart';
+import 'package:bmi_app/view/widget/document/heading.dart';
+import 'package:bmi_app/view/widget/document/text.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_app/view/RecommendScreen.dart';
 
@@ -14,43 +14,43 @@ class RecommendController {
 
   List<List<Widget>> recommendationContent = [
     [
-      HtmlHeading(text: "Chế độ dinh dưỡng cho người gầy (BMI < 18.5)", level: 6),
-      HtmlText(text:
+      DocumentHeading(text: "Chế độ dinh dưỡng cho người gầy (BMI < 18.5)", level: 6),
+      DocumentText(text:
         """
     Với chế độ dinh dưỡng cho người gầy, bạn cần đảm bảo ăn đầy đủ 3 bữa chính với đủ các nhóm chất, thêm vào đó là những món trái cây tráng miệng (sau bữa chính 20 phút) để bổ sung thêm vitamin và khoáng chất. Đối với bữa tối, bạn không nên ăn quá no cũng như không nên ăn nhiều loại thức ăn mà cơ thể khó hấp thụ. 
     Các bữa phụ bổ sung trong chế độ dinh dưỡng cho người gầy cũng phải khoa học và hợp lý. Bạn nên ăn những bữa phụ lúc 9h30, 3h chiều và 9h tối.
         """
       ),
-      HtmlHeading(text: "Nguyên tắc cơ bản trong cách ăn uống để tăng cân nhanh ", level: 6),
-      HtmlText(text:
+      DocumentHeading(text: "Nguyên tắc cơ bản trong cách ăn uống để tăng cân nhanh ", level: 6),
+      DocumentText(text:
       """
     Để xây dựng chế độ dinh dưỡng cho người gầy tăng cân hợp lý, bạn cần dựa trên các nguyên tắc cơ bản sau:
       """
       ),
-      HtmlText(text:
+      DocumentText(text:
       """
     Ăn nhiều bữa, bổ sung bữa ăn phụ
       """,
         fontWeight: FontWeight.bold,
       ),
-      HtmlText(text:
+      DocumentText(text:
       """
     Cơ thể cần được liên tục bổ sung dinh dưỡng trong quá trình tăng cân, vì thế bạn nên bổ sung thêm các bữa phụ thay vì chỉ ăn trong 3 bữa chính. Số lượng bữa phụ trong ngày nên là 2-3 bữa. Thực phẩm sử dụng cho bữa phụ bao gồm các loại sữa, bánh ngọt, các loại hạt...
       """
       ),
-      HtmlText(text:
+      DocumentText(text:
       """
     Kết hợp tập luyện
       """,
         fontWeight: FontWeight.bold
       ),
-      HtmlText(text:
+      DocumentText(text:
       """
     Bổ sung dinh dưỡng, tăng cường các loại thực phẩm tốt phải được kết hợp song song với một chế độ sinh hoạt lành mạnh, khoa học, chế độ tập luyện điều độ. Tập luyện giúp cho cơ thể hấp thu dinh dưỡng hiệu quả hơn đồng thời cải thiện vóc dáng, giúp bạn tăng cân an toàn. Tuy nhiên, bạn chỉ nên lựa chọn các bài tập luyện phù hợp, không nên luyện tập quá sức
       """
       ),
-      HtmlHeading(text: "Một số thực phẩm giàu năng lượng có thể giúp bạn tăng cân bao gồm:", level: 6),
-      HtmlText(text:
+      DocumentHeading(text: "Một số thực phẩm giàu năng lượng có thể giúp bạn tăng cân bao gồm:", level: 6),
+      DocumentText(text:
       """
     •	Các loại hạt (hạnh nhân, quả óc chó, hạt mắc ca và đậu phộng).
     •	Trái cây sấy khô (nho khô, chà là, mận khô và các loại khác).
@@ -61,8 +61,8 @@ class RecommendController {
     •	Củ (khoai tây, khoai lang và khoai mỡ) và các loại thực phẩm giàu năng lượng khác (sô cô la đen, bơ, bơ đậu phộng, nước cốt dừa)...
       """
       ),
-      HtmlHeading(text: "Bí quyết trong chế độ dinh dưỡng cho người gầy giúp tăng cân thành công", level: 6),
-      HtmlText(text:
+      DocumentHeading(text: "Bí quyết trong chế độ dinh dưỡng cho người gầy giúp tăng cân thành công", level: 6),
+      DocumentText(text:
       """
     Bí quyết quan trọng trong chế độ dinh dưỡng cho người gầy tăng cân nhanh là hãy luôn bổ sung sữa vào khẩu phần ăn.
     Bổ sung vào khẩu phần của mình những loại trái cây tốt cho sức khỏe như: bơ, chuối, cam,...
@@ -70,9 +70,9 @@ class RecommendController {
     Thay đổi món ăn thường xuyên mỗi ngày để không bị “ngán” và tạo động lực ăn uống nhằm tăng cân hiệu quả. Khuyến khích ăn thêm bữa phụ mỗi ngày.
       """
       ),
-      HtmlHeading(text: "7 Thực đơn dinh dưỡng cho người gầy tăng cân trong 1 tuần", level: 6),
-      HtmlHeading(text: "Ngày 1", level: 7),
-      HtmlText(text:
+      DocumentHeading(text: "7 Thực đơn dinh dưỡng cho người gầy tăng cân trong 1 tuần", level: 6),
+      DocumentHeading(text: "Ngày 1", level: 7),
+      DocumentText(text:
       """
     •	Bữa sáng: 1 tô phở, 1 quả trứng và 1 ly sữa, trái cây.
     •	Bữa phụ: 1 phần ngũ cốc.
@@ -82,8 +82,8 @@ class RecommendController {
     •	Bữa phụ: 1 tô miến nhỏ, dĩa trái cây.
       """
       ),
-      HtmlHeading(text: "Ngày 2", level: 7),
-      HtmlText(text:
+      DocumentHeading(text: "Ngày 2", level: 7),
+      DocumentText(text:
       """
     •	Bữa sáng: 1 dĩa bánh cuốn hoặc 1 dĩa pancake tráng mỏng cuộn thịt, 1 ly sữa, trái cây.
     •	Bữa phụ: 1 phần sinh tố, bánh ngọt.
@@ -93,8 +93,8 @@ class RecommendController {
     •	Bữa phụ: 1 tô bún nhỏ.
       """
       ),
-      HtmlHeading(text: "Ngày 3", level: 7),
-      HtmlText(text:
+      DocumentHeading(text: "Ngày 3", level: 7),
+      DocumentText(text:
       """
     •	Bữa sáng: 1 tô bún hoặc 1 tô mỳ 1 ly sữa, trái cây.
     •	Bữa phụ: 1 phần ngũ cốc.
@@ -104,8 +104,8 @@ class RecommendController {
     •	Bữa phụ: 1 tô miến nhỏ.
       """
       ),
-      HtmlHeading(text: "Ngày 4", level: 7),
-      HtmlText(text:
+      DocumentHeading(text: "Ngày 4", level: 7),
+      DocumentText(text:
       """
     •	Bữa sáng: 1 dĩa bò bít tết, 1 quả trứng và 1 ly sữa.
     •	Bữa phụ: 1 tô cháo, trái cây.
@@ -115,8 +115,8 @@ class RecommendController {
     •	Bữa phụ: 1 phần súp.
       """
       ),
-      HtmlHeading(text: "Ngày 5", level: 7),
-      HtmlText(text:
+      DocumentHeading(text: "Ngày 5", level: 7),
+      DocumentText(text:
       """
     •	Bữa sáng: 1 đĩa cơm sườn hoặc mì xào sườn nướng, 1 ly sữa, trái cây.
     •	Bữa phụ: 1 phần ngũ cốc.
@@ -126,8 +126,8 @@ class RecommendController {
     •	Bữa phụ: bánh mì ngọt, trái cây.
       """
       ),
-      HtmlHeading(text: "Ngày 6", level: 7),
-      HtmlText(text:
+      DocumentHeading(text: "Ngày 6", level: 7),
+      DocumentText(text:
       """
     •	Bữa sáng: 1 tô bún bò hoặc cá hồi nướng bơ tỏi ăn cùng bánh mì, 1 ly sữa, trái cây.
     •	Bữa phụ: 1 ly sinh tố trái cây.
@@ -137,8 +137,8 @@ class RecommendController {
     •	Bữa phụ: bánh mì ngọt, trái cây.
       """
       ),
-      HtmlHeading(text: "Ngày 7", level: 7),
-      HtmlText(text:
+      DocumentHeading(text: "Ngày 7", level: 7),
+      DocumentText(text:
       """
     •	Bữa sáng: 2 ổ bánh mì, 2 trứng ốp la, 1 ly sữa, trái cây.
     •	Bữa phụ: 1 dĩa salad trộn rau củ.
@@ -150,13 +150,13 @@ class RecommendController {
       ),
     ],
     [
-      HtmlHeading(text: "Lợi ích của việc duy trì chỉ số BMI khoẻ mạnh", level: 6),
-      HtmlText(text:
+      DocumentHeading(text: "Lợi ích của việc duy trì chỉ số BMI khoẻ mạnh", level: 6),
+      DocumentText(text:
       """
     Tại sao nhiều người lại siêng năng tập luyện gym để có được và duy trì chỉ số BMI chuẩn một lý do hết sức thuyết phục mà chúng ta đều phải công nhận đó chính là khi đạt chỉ số BMI tốt bạn sẽ có được rất nhiều thứ. Một sức khỏe tuyệt vời sẽ giúp bạn tránh xa bệnh tật duy trì tuổi trẻ và đặc biệt bạn sẽ không phải tốn nhiều tiền mua thuốc để trị các bệnh vặt đâu nhé. Vì bạn đã có một BMI tuyệt vời rồi
       """
       ),
-      HtmlText(text:
+      DocumentText(text:
       """
     •	Giảm nguy cơ mắc bệnh tim.
     •	Giảm nguy cơ đột quỵ.
@@ -170,8 +170,8 @@ class RecommendController {
     •	Giảm nguy cơ thiếu máu.
       """
       ),
-      HtmlHeading(text: "Một số lời khuyên cho bạn để duy trì chỉ số BMI khoẻ mạnh", level: 6),
-      HtmlText(text:
+      DocumentHeading(text: "Một số lời khuyên cho bạn để duy trì chỉ số BMI khoẻ mạnh", level: 6),
+      DocumentText(text:
       """
     •	Thực hiện ăn uống theo chế độ khoa học tốt cho sức khoẻ.
     •	Hãy lựa chọn thực phẩm lành mạnh. Tránh thực phẩm có chứa đường, chất béo và lượng calo cao.
@@ -184,14 +184,14 @@ class RecommendController {
       )
     ],
     [
-      HtmlText(text:"Mình gợi ý cho bạn chế độ dinh dưỡng phù hợp với chỉ số BMI của bạn, bạn có thể tham khảo nhé!"),
-      HtmlHeading(text: "Chế độ dinh dưỡng phù hợp với người thừa cân- béo phì", level: 6),
-      HtmlText(text:
+      DocumentText(text:"Mình gợi ý cho bạn chế độ dinh dưỡng phù hợp với chỉ số BMI của bạn, bạn có thể tham khảo nhé!"),
+      DocumentHeading(text: "Chế độ dinh dưỡng phù hợp với người thừa cân- béo phì", level: 6),
+      DocumentText(text:
       """
     Người béo phì là do dư thừa năng lượng kéo dài qua chế độ ăn uống, khiến cơ thể tích lũy mỡ quá mức. Để giảm cân, giảm lượng mỡ thừa cần chế độ ăn uống và hoạt động thể lực hợp lý. Cụ thể, cần có chế độ ăn thấp năng lượng, cân đối, ít đường, đủ đạm, vitamin, nhiều rau quả. Từng bước giảm năng lượng trong từng khẩu phần ăn, mỗi tuần giảm khoảng 300 kcal từng ngày so với khẩu phần trước đó, cho đến khi đạt năng lượng tương ứng đến mức BMI. Chẳng hạn:
       """
       ),
-      HtmlText(text:
+      DocumentText(text:
       """
     - BMI từ 25-29,9: Năng lượng đưa vào một ngày là 1.500 kcal.
     - BMI từ 30-34,9: Năng lượng đưa vào một ngày là 1.200 kcal.
@@ -199,8 +199,8 @@ class RecommendController {
     - BMI ≥ 40: Năng lượng đưa vào một ngày là 800 kcal.
       """
       ),
-      HtmlText(text: "Lưu ý: Trong chế độ ăn cần cân chỉnh tỷ lệ năng lượng giữa các chất như sau: 15-16% protein, 12-13% lipid, 71-72% glucid. Do đó, bạn cần:"),
-      HtmlText(text:
+      DocumentText(text: "Lưu ý: Trong chế độ ăn cần cân chỉnh tỷ lệ năng lượng giữa các chất như sau: 15-16% protein, 12-13% lipid, 71-72% glucid. Do đó, bạn cần:"),
+      DocumentText(text:
       """
     - Hạn chế thức ăn béo, ngọt, không nên ăn da, mỡ động vật, nuớc luộc thịt, bánh, kẹo, chè kem..., nên ăn cá nhiều hơn thịt. Hạn chế sử dụng các thực phẩm chế biến sẵn như giò chả, xúc xích, gà rán...
     - Tăng cường rau, trái cây ít ngọt và thực phẩm giàu chất xơ.
@@ -211,8 +211,8 @@ class RecommendController {
     - Tăng cường hoạt động thể lực, tập thể dục ít nhất 60 phút mỗi ngày, vận động nhằm mục đích tiêu hao năng lượng dự trữ dưới dạng mô mỡ, tăng khối cơ bắp và khối xương qua đó giảm các vùng lỏng lẻo của cơ thể, hạn chế khu vực phát triển của các tế bào mỡ.
       """
       ),
-      HtmlHeading(text: "Thực đơn gợi ý phù hợp nhu cầu năng lượng theo chỉ số BMI", level: 6),
-      HtmlText(text:
+      DocumentHeading(text: "Thực đơn gợi ý phù hợp nhu cầu năng lượng theo chỉ số BMI", level: 6),
+      DocumentText(text:
       """
     - BMI từ 25-29,9 ( Thừa cân):  Năng lượng đưa vào một ngày là 1.500 kcal.
     - BMI từ 30-34,9 (béo phì độ 1): Năng lượng đưa vào một ngày là 1.200 kcal.
@@ -220,8 +220,30 @@ class RecommendController {
     - BMI ≥ 40 (béo phì độ 3- Nghiêm trọng): Năng lượng đưa vào một ngày là 800 kcal.
       """
       ),
-      HtmlHeading(text: "Để biết số cân nặng “nên có” của mình, bạn có thể dựa vào công thức tính cân nặng lý tưởng như sau:", level: 6),
-      HtmlText(text:
+      Table(
+        border: TableBorder.all(
+          color: Colors.black, 
+          width: 1.0
+        ),
+        children: [
+          TableRow(
+            children: [
+              Text('Cell 1'),
+              Text('Cell 2'),
+              Text('Cell 3'),
+            ]
+          ),
+          TableRow(
+            children: [
+              Text('Cell 4'),
+              Text('Cell 5'),
+              Text('Cell 6'),
+            ]
+          )
+        ],
+      ),
+      DocumentHeading(text: "Để biết số cân nặng “nên có” của mình, bạn có thể dựa vào công thức tính cân nặng lý tưởng như sau:", level: 6),
+      DocumentText(text:
       """
 Cân nặng lý tưởng = (chiều cao(cm) - 100)x0,9
 Ví dụ: Một người cao 1,5 m (150 cm), áp dụng vào công thức tính như sau:

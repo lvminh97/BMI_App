@@ -1,30 +1,31 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-class HtmlHeading extends StatelessWidget {
-
-  final List<double> __fontSize = [0, 30.sp, 26.sp, 24.sp, 20.sp, 16.sp, 14.sp, 13.sp];
+class DocumentText extends StatelessWidget {
 
   String text = "";
-  int level = 1;
+  FontWeight fontWeight = FontWeight.normal;
 
-  HtmlHeading({super.key, required this.text, this.level = 1});
+
+  DocumentText({super.key, required this.text, this.fontWeight = FontWeight.normal});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 1.h, bottom: 1.5.h),
+      margin: EdgeInsets.only(bottom: 0.1.h),
       alignment: Alignment.centerLeft,
       child: Text(
         text,
         textAlign: TextAlign.justify,
         style: TextStyle(
-          fontSize: __fontSize[level],
-          fontWeight: FontWeight.bold,
+          fontSize: 13.sp,
+          fontWeight: fontWeight,
           color: Colors.black
         ),
       ),
     );
   }
-  
+
 }
