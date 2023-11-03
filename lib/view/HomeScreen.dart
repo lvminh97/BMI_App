@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, no_logic_in_create_state
 
 import 'package:bmi_app/controller/HomeController.dart';
 import 'package:bmi_app/view/widget/MyButton.dart';
@@ -7,16 +7,22 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class HomeScreen extends StatefulWidget {
+
+  static double height = 0, weight = 0;
+
   const HomeScreen({super.key});
   
   @override
-  State<StatefulWidget> createState() => HomeScreenState();
+  State<StatefulWidget> createState() => HomeScreenState(height, weight);
 }
 
 class HomeScreenState extends State<HomeScreen> {
 
   late HomeController _controller;
   late TextEditingController heightTxtController, weightTxtController;
+  double height = 0, weight = 0;
+
+  HomeScreenState(this.height, this.weight);
 
   @override
   void initState() {
@@ -27,14 +33,14 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)?.settings.arguments;
-    if(args != null) {
-      args as Map;
-      if(args.containsKey("height") && args.containsKey("weight")) {
-        heightTxtController.text = "${args["height"]}";
-        weightTxtController.text = "${args["weight"]}";
-      }
-  }
+    // final args = ModalRoute.of(context)?.settings.arguments;
+    // if(args != null) {
+    //   args as Map;
+    //   if(args.containsKey("height") && args.containsKey("weight")) {
+    //     heightTxtController.text = "${args["height"]}";
+    //     weightTxtController.text = "${args["weight"]}";
+    //   }
+    // }
     return WillPopScope(
       onWillPop: () async {
         return false;

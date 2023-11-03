@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, no_logic_in_create_state
 
 import 'package:bmi_app/controller/ResultController.dart';
 import 'package:bmi_app/view/widget/MyButton.dart';
@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class ResultScreen extends StatefulWidget {
+  static double bmi = 0;
+
   const ResultScreen({super.key});
   
   @override
@@ -15,9 +17,6 @@ class ResultScreen extends StatefulWidget {
 class ResultScreenState extends State<ResultScreen> {
 
   late ResultController _controller;
-  double _height = 0.0;
-  double _weight = 0.0;
-  double _bmi = 0.0;
 
   @override
   void initState() {
@@ -27,10 +26,6 @@ class ResultScreenState extends State<ResultScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)?.settings.arguments as Map;
-    _height = args["height"] ?? 0.0;
-    _weight = args["weight"] ?? 0.0;
-    _bmi = args["bmi"] ?? 0.0;
     return WillPopScope(
       onWillPop: () async {
         return false;
@@ -84,10 +79,7 @@ class ResultScreenState extends State<ResultScreen> {
                         height: 8.h,
                         child: MyButton(
                           onPressed: () {
-                            Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => false, arguments: {
-                              "height": _height,
-                              "weight": _weight
-                            });
+                            Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => false);
                           },
                           pressedStyle: TextButton.styleFrom(
                             backgroundColor: Colors.blue.shade100
@@ -105,7 +97,7 @@ class ResultScreenState extends State<ResultScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 10.h),
                   child: Text(
-                    _bmi.toString(),
+                    ResultScreen.bmi.toString(),
                     style: TextStyle(
                       fontSize: 80.sp,
                       fontWeight: FontWeight.bold,
@@ -116,7 +108,7 @@ class ResultScreenState extends State<ResultScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 2.h),
                   child: Text(
-                    _controller.getCategory(_bmi),
+                    _controller.getCategory(ResultScreen.bmi),
                     style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
@@ -129,7 +121,7 @@ class ResultScreenState extends State<ResultScreen> {
                   width: 90.w,
                   alignment: Alignment.center,
                   child: Text(
-                    _controller.getShortAdvice(_bmi),
+                    _controller.getShortAdvice(ResultScreen.bmi),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16.sp,
@@ -144,7 +136,9 @@ class ResultScreenState extends State<ResultScreen> {
                   ),
                   width: 85.w,
                   child: MyButton(
-                    onPressed: (){},
+                    onPressed: () {
+                      Navigator.pushNamedAndRemoveUntil(context, "/recommend", (route) => false);
+                    },
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.only(left: 8.w, top: 2.h, right: 8.w, bottom: 2.h),
                       backgroundColor: Colors.blue
