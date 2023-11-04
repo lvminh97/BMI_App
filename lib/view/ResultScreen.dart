@@ -28,7 +28,8 @@ class ResultScreenState extends State<ResultScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        return false;
+        Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => false);
+        return true;
       },
       child: Scaffold(
         body: DecoratedBox(

@@ -33,14 +33,6 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final args = ModalRoute.of(context)?.settings.arguments;
-    // if(args != null) {
-    //   args as Map;
-    //   if(args.containsKey("height") && args.containsKey("weight")) {
-    //     heightTxtController.text = "${args["height"]}";
-    //     weightTxtController.text = "${args["weight"]}";
-    //   }
-    // }
     return WillPopScope(
       onWillPop: () async {
         return false;

@@ -26,7 +26,8 @@ class RecommendScreenState extends State<RecommendScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        return false;
+        Navigator.pushNamedAndRemoveUntil(context, "/result", (route) => false);
+        return true;
       },
       child: Scaffold(
         body: DecoratedBox(
