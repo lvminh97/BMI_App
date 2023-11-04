@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, no_logic_in_create_state
 
 import 'package:bmi_app/controller/HomeController.dart';
+import 'package:bmi_app/language.dart';
 import 'package:bmi_app/view/widget/MyButton.dart';
 import 'package:bmi_app/view/widget/MyTextField.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
+
+  static List<Map<String, String>> strings = [
+    {"vi": "Chỉ số BMI", "en": "BMI index"},  // 0
+    {"vi": "Chiều cao (cm)", "en": "Height (cm)"},  // 1
+    {"vi": "Cân nặng (kg)", "en": "Weight (kg)"},  // 2
+    {"vi": "Tính toán", "en": "Compute"},  // 3
+  ];
 
   late HomeController _controller;
   late TextEditingController heightTxtController, weightTxtController;
@@ -56,7 +64,7 @@ class HomeScreenState extends State<HomeScreen> {
                       Container(
                         alignment: Alignment.center,
                         child: Text(
-                          "CHỈ SỐ BMI",
+                          strings[0][Language.cur]!.toUpperCase(),
                           style: TextStyle(
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
@@ -70,12 +78,15 @@ class HomeScreenState extends State<HomeScreen> {
                         width: 15.w,
                         height: 8.h,
                         child: MyButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await Language.toggle();
+                            setState(() {});
+                          },
                           pressedStyle: TextButton.styleFrom(
                             backgroundColor: Colors.blue.shade100
                           ),
-                          child: const Image(
-                            image: AssetImage("assets/images/vietnam_flag.png"),
+                          child: Image(
+                            image: AssetImage("assets/images/${Language.cur == "vi" ? "vietnam_flag" : "england_flag"}.png"),
                           ),
                         ),
                       )
@@ -103,7 +114,7 @@ class HomeScreenState extends State<HomeScreen> {
                           SizedBox(
                             width: 40.w,
                             child: Text(
-                              "Chiều cao (cm)",
+                              strings[1][Language.cur]!,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 color: Colors.black
@@ -119,7 +130,7 @@ class HomeScreenState extends State<HomeScreen> {
                           SizedBox(
                             width: 40.w,
                             child: Text(
-                              "Cân nặng (kg)",
+                              strings[2][Language.cur]!,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 color: Colors.black
@@ -152,7 +163,7 @@ class HomeScreenState extends State<HomeScreen> {
                       backgroundColor: Colors.blue.shade300
                     ),
                     child: Text(
-                      "Tính toán",
+                      strings[3][Language.cur]!,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14.sp

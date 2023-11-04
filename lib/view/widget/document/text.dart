@@ -7,9 +7,9 @@ class DocumentText extends StatelessWidget {
 
   String text = "";
   FontWeight fontWeight = FontWeight.normal;
+  TextAlign textAlign = TextAlign.justify;
 
-
-  DocumentText({super.key, required this.text, this.fontWeight = FontWeight.normal});
+  DocumentText({super.key, required this.text, this.fontWeight = FontWeight.normal, this.textAlign = TextAlign.justify});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class DocumentText extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Text(
         text,
-        textAlign: TextAlign.justify,
+        textAlign: textAlign,
         style: TextStyle(
           fontSize: 13.sp,
           fontWeight: fontWeight,
