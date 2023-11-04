@@ -1,7 +1,9 @@
-// ignore_for_file: unused_field
+// ignore_for_file: unused_field, prefer_const_literals_to_create_immutables
 
 import 'package:bmi_app/view/ResultScreen.dart';
 import 'package:bmi_app/view/widget/document/heading.dart';
+import 'package:bmi_app/view/widget/document/table.dart';
+import 'package:bmi_app/view/widget/document/tablerow.dart';
 import 'package:bmi_app/view/widget/document/text.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_app/view/RecommendScreen.dart';
@@ -220,27 +222,75 @@ class RecommendController {
     - BMI ≥ 40 (béo phì độ 3- Nghiêm trọng): Năng lượng đưa vào một ngày là 800 kcal.
       """
       ),
-      Table(
-        border: TableBorder.all(
-          color: Colors.black, 
-          width: 1.0
-        ),
-        children: [
-          TableRow(
-            children: [
-              Text('Cell 1'),
-              Text('Cell 2'),
-              Text('Cell 3'),
-            ]
-          ),
-          TableRow(
-            children: [
-              Text('Cell 4'),
-              Text('Cell 5'),
-              Text('Cell 6'),
-            ]
-          )
-        ],
+      DocumentTable(
+        col: 4,
+        row: 1,
+        data: [
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Thực đơn cho người béo phì"]),
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Năng lượng 800 KCal"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bữa ăn", "<<bold>>Món ăn", "<<bold>>Số lượng", "<<bold>>Năng lượng (KCal)"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Sáng", "Khoai từ luộc", "1 củ nhỏ 100g", "98"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Sữa bổ sung canxi", "1 ly 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Táo ta", "3 trái", "27"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Trưa", "Cháo sườn (1 tô nhỏ)", "Thịt sườn heo 20g, giá 25g, dầu 3g", "117"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Thanh long", "1 miếng 50g", "20"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Sữa bổ sung canxi", "1 ly 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "1/2 chén vừa", "100"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Chiều", "Canh bầu", "Tép 27g, bầu 100g, dầu 2g", "48"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Đậu que xào thịt bò", "Thịt bò 24g, đậu que 30g, dầu 4g", "96"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Chuối xiêm", "1 trái vừa", "80"]),
+          DocumentTableRow(colWidth: [5,1], data: ["<<center>><<bold>>Tổng cộng", "<<bold>>808"]),
+          //
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Năng lượng 1000 KCal"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bữa ăn", "<<bold>>Món ăn", "<<bold>>Số lượng", "<<bold>>Năng lượng (KCal)"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Sáng", "Canh bún", "Bún tươi 70g\nMảng riêu 12g\nChả lụa 9g\nMăng khô 5g\nRau muống", "148"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Xoài", "1/4 trái", "45"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Sữa bổ sung canxi", "1 ly 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "1 chén vừa", "200"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Trưa", "Canh bí đỏ", "Thịt heo 5g\nBí đỏ 80g", "42"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Thịt nạc kho tiêu", "Thịt heo nạc 30g\nDầu 4.5g", "80"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Bắp cải luộc", "Bắp cải 70g", "20"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Chuối xiêm", "1 trái vừa", "54"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "2/3 chén vừa", "150"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Chiều", "Canh rau dền thịt", "Thịt heo 5g\nRau dền 50g", "22"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Lươn xào sả ớt", "Lươn 42g\nDầu 6g\nGia vị", "94"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Mãng cầu xiêm", "1 miếng 80g", "40"]),
+          DocumentTableRow(colWidth: [5,1], data: ["<<bold>><<center>>Tổng cộng", "<<bold>>1006"]),
+          //
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Năng lượng 1200 KCal"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bữa ăn", "<<bold>>Món ăn", "<<bold>>Số lượng", "<<bold>>Năng lượng (KCal)"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Sáng", "Phở gà (1 tô nhỏ)", "Bánh phở 80g\nThịt gà 30g\nGiá, rau quế", "241"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Táo tây", "1/2 trái vừa", "53"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Sữa bổ sung canxi", "1 ly 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "1 chén vừa", "200"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Trưa", "Canh khổ qua thịt", "Thịt heo 10g\nKhổ qua 130g", "34"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Cá ngừ kho thơm", "Cá 46g\nThơm 35g\nDầu 4.5g", "90"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Cải thìa luộc", "Cải thìa 63g", "10"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Đu đủ", "1 miếng 180g", "63"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "1 chén vừa", "200"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Canh cải soong", "Thịt heo 10g\nCải soong 70g", "24"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Chiều", "Trứng chưng", "Thịt heo 10g\nTrứng vịt 1/2 quả\nDầu 4.5g", "94"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Su su xào", "Su su 55g\nDầu 4.5g", "50"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Quýt", "1.5 trái vừa", "42"]),
+          DocumentTableRow(colWidth: [5,1], data: ["<<bold>><<center>>Tổng cộng", "<<bold>>1212"]),
+          //
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Năng lượng 1500 KCal"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bữa ăn", "<<bold>>Món ăn", "<<bold>>Số lượng", "<<bold>>Năng lượng (KCal)"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Sáng", "Miếng gà (1 tô vừa)", "Miến khô 50g\nThịt gà 30g\nMăng khô 5g\nGiá, rau muống", "317"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Bười", "4 múi", "40"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Sữa bổ sung canxi", "1 ly 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "1.5 chén vừa", "300"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Trưa", "Canh chua cá hồi", "Cá nạc 30g\nThơm, cà chua 120g\nDầu 4.5g", "96"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Thịt kho trứng", "Thịt heo nạc 30g\nTrứng 1/2 quả\nDầu 3g", "107"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Rau muống luộc", "Rau muống 100g", "23"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Chôm chôm", "5 trái", "70"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "1 chén vừa", "200"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Canh tần ô thịt", "Thịt 10g\nRau tần ô 70g", "24"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Chiều", "Tôm rim", "Tôm 50g\nDầu 6g\nGia vị", "101"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Bông cải, cà rốt xào", "Bông cải 70g\nCà rốt 50g\nDầu 3g", "67"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Ổi", "1 trái vừa", "53"]),
+          DocumentTableRow(colWidth: [5,1], isLastRow: true, data: ["<<bold>><<center>>Tổng cộng", "<<bold>>1509"]),
+        ]
       ),
       DocumentHeading(text: "Để biết số cân nặng “nên có” của mình, bạn có thể dựa vào công thức tính cân nặng lý tưởng như sau:", level: 6),
       DocumentText(text:
