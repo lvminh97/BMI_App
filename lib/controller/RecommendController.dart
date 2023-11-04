@@ -1,5 +1,6 @@
 // ignore_for_file: unused_field, prefer_const_literals_to_create_immutables
 
+import 'package:bmi_app/language.dart';
 import 'package:bmi_app/view/ResultScreen.dart';
 import 'package:bmi_app/view/widget/document/heading.dart';
 import 'package:bmi_app/view/widget/document/table.dart';
@@ -14,7 +15,8 @@ class RecommendController {
 
   RecommendController(this._state);
 
-  List<List<Widget>> recommendationContent = [
+  Map<String, List<List<Widget>>> recommendationContent = {
+    "vi": [
     [
       DocumentHeading(text: "Chế độ dinh dưỡng cho người gầy (BMI < 18.5)", level: 6),
       DocumentText(text:
@@ -82,7 +84,8 @@ class RecommendController {
     •	Bữa phụ: 1 đĩa trái cây.
     •	Bữa tối: 2 chén cơm, canh xương hầm rau củ, thịt heo xào đậu que, nước ép trái cây.
     •	Bữa phụ: 1 tô miến nhỏ, dĩa trái cây.
-      """
+      """,
+      textAlign: TextAlign.left
       ),
       DocumentHeading(text: "Ngày 2", level: 7),
       DocumentText(text:
@@ -93,7 +96,8 @@ class RecommendController {
     •	Bữa phụ: 1 phần súp.
     •	Bữa tối: 2 chén cơm, canh cải ngọt nấu nấm, đậu hũ nhồi thịt, trái cây.
     •	Bữa phụ: 1 tô bún nhỏ.
-      """
+      """,
+      textAlign: TextAlign.left
       ),
       DocumentHeading(text: "Ngày 3", level: 7),
       DocumentText(text:
@@ -104,7 +108,8 @@ class RecommendController {
     •	Bữa phụ: 1 phần bánh mì ngọt, 1 ly sữa.
     •	Bữa tối: 2 chén cơm, canh cua rau đay, đậu hũ dồn thịt chiên giòn, nước ép trái cây.
     •	Bữa phụ: 1 tô miến nhỏ.
-      """
+      """,
+      textAlign: TextAlign.left
       ),
       DocumentHeading(text: "Ngày 4", level: 7),
       DocumentText(text:
@@ -115,7 +120,8 @@ class RecommendController {
     •	Bữa phụ: 1 ly nước ép trái cây.
     •	Bữa tối: 2 chén cơm, canh, 100g thịt bò, rau luộc, trái cây.
     •	Bữa phụ: 1 phần súp.
-      """
+      """,
+      textAlign: TextAlign.left
       ),
       DocumentHeading(text: "Ngày 5", level: 7),
       DocumentText(text:
@@ -126,7 +132,8 @@ class RecommendController {
     •	Bữa phụ: bánh mì ngọt, 1 ly sữa.
     •	Bữa tối: 2 chén cơm, canh chua cá hú, thịt heo viên áp chảo, nước ép trái cây.
     •	Bữa phụ: bánh mì ngọt, trái cây.
-      """
+      """,
+      textAlign: TextAlign.left
       ),
       DocumentHeading(text: "Ngày 6", level: 7),
       DocumentText(text:
@@ -137,7 +144,8 @@ class RecommendController {
     •	Bữa phụ: bánh mì ngọt, 1 ly sữa.
     •	Bữa tối: 2 chén cơm, canh đậu hũ nấm, mực xào chua ngọt, nước ép trái cây.
     •	Bữa phụ: bánh mì ngọt, trái cây.
-      """
+      """,
+      textAlign: TextAlign.left
       ),
       DocumentHeading(text: "Ngày 7", level: 7),
       DocumentText(text:
@@ -148,7 +156,8 @@ class RecommendController {
     •	Bữa phụ: bánh mì ngọt, 1 ly sữa.
     •	Bữa tối: 2 chén cơm, canh đậu hũ nấu với hẹ, thịt bò xào bông cải, nước ép trái cây.
     •	Bữa phụ: bánh mì ngọt, trái cây.
-      """
+      """,
+      textAlign: TextAlign.left
       ),
     ],
     [
@@ -170,7 +179,8 @@ class RecommendController {
     •	Giảm nguy cơ loãng xương.
     •	Giảm nguy cơ vô sinh.
     •	Giảm nguy cơ thiếu máu.
-      """
+      """,
+      textAlign: TextAlign.left,
       ),
       DocumentHeading(text: "Một số lời khuyên cho bạn để duy trì chỉ số BMI khoẻ mạnh", level: 6),
       DocumentText(text:
@@ -182,7 +192,8 @@ class RecommendController {
     •	Bắt đầu những thói quen sinh hoạt tốt, chẳng hạn như uống nhiều nước, ngủ đủ giấc,… .
     •	Hạn chế uống rượu bia, các chất chứa cồn và chất kích thích.
     •	Theo dõi cân nặng chính xác của bản thân thường xuyên, tốt nhất là không nên mặc quần áo quá nhiều khi cân
-      """
+      """,
+      textAlign: TextAlign.left,
       )
     ],
     [
@@ -232,12 +243,12 @@ class RecommendController {
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Sáng", "Khoai từ luộc", "1 củ nhỏ 100g", "98"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Sữa bổ sung canxi", "1 ly 200ml", "111"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Táo ta", "3 trái", "27"]),
-          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Trưa", "Cháo sườn (1 tô nhỏ)", "Thịt sườn heo 20g, giá 25g, dầu 3g", "117"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Trưa", "Cháo sườn (1 tô nhỏ)", "Thịt sườn heo 20g\nGiá 25g\nDầu 3g", "117"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Thanh long", "1 miếng 50g", "20"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Sữa bổ sung canxi", "1 ly 200ml", "111"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "1/2 chén vừa", "100"]),
-          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Chiều", "Canh bầu", "Tép 27g, bầu 100g, dầu 2g", "48"]),
-          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Đậu que xào thịt bò", "Thịt bò 24g, đậu que 30g, dầu 4g", "96"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Chiều", "Canh bầu", "Tép 27g\nBầu 100g\nDầu 2g", "48"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Đậu que xào thịt bò", "Thịt bò 24g\nĐậu que 30g\nDầu 4g", "96"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Chuối xiêm", "1 trái vừa", "80"]),
           DocumentTableRow(colWidth: [5,1], data: ["<<center>><<bold>>Tổng cộng", "<<bold>>808"]),
           //
@@ -276,7 +287,7 @@ class RecommendController {
           //
           DocumentTableRow(colWidth: [6], data: ["<<bold>>Năng lượng 1500 KCal"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bữa ăn", "<<bold>>Món ăn", "<<bold>>Số lượng", "<<bold>>Năng lượng (KCal)"]),
-          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Sáng", "Miếng gà (1 tô vừa)", "Miến khô 50g\nThịt gà 30g\nMăng khô 5g\nGiá, rau muống", "317"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Sáng", "Miến gà (1 tô vừa)", "Miến khô 50g\nThịt gà 30g\nMăng khô 5g\nGiá, rau muống", "317"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Bười", "4 múi", "40"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Phụ", "Sữa bổ sung canxi", "1 ly 200ml", "111"]),
           DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Cơm", "1.5 chén vừa", "300"]),
@@ -301,21 +312,321 @@ Cân nặng lý tưởng = (150 - 100 ) x 0,9 = 45 kg.
       """
       )
     ]
-  ];
+    ],
+    "en": [
+    [
+      DocumentHeading(text: "Nutrition for skinny people (BMI <18.5)", level: 6),
+      DocumentText(text:
+        """
+    With a diet for skinny people, you need to make sure to eat 3 main meals with all the basic nutrient groups mentioned above, in addition to fruit desserts (20 minutes after the main meal) to supplement. vitamins and minerals. For dinner, you should not eat too much and should not eat a lot of foods that are difficult for your body to absorb.
+    Additional snacks in the diet for thin people must also be scientific and reasonable. You should eat snacks at 9:30 am, 3 pm and 9 pm.
+        """
+      ),
+      DocumentHeading(text: "Basic principles in eating to gain weight quickly", level: 6),
+      DocumentText(text:
+      """
+    To build a reasonable nutritional regimen for thin people to gain weight, you need to rely on the following basic principles:
+      """
+      ),
+      DocumentText(text:
+      """
+    Eat many meals, add extra meals
+      """,
+        fontWeight: FontWeight.bold,
+      ),
+      DocumentText(text:
+      """
+    The body needs to continuously supplement nutrients during the weight gain process, so you should add extra meals instead of just eating 3 main meals. The number of snacks per day should be 2-3 meals. Foods used for snacks include milk, cakes, nuts, etc.
+      """
+      ),
+      DocumentText(text:
+      """
+    Combine exercise
+      """,
+        fontWeight: FontWeight.bold
+      ),
+      DocumentText(text:
+      """
+    Nutritional supplementation and strengthening of good foods must be combined with a healthy, scientific lifestyle and moderate exercise regimen. Exercise helps the body absorb nutrients more effectively while improving your physique, helping you gain weight safely. However, you should only choose appropriate exercises and not overdo them
+      """
+      ),
+      DocumentHeading(text: "Some energy-dense foods that can help you gain weight include:", level: 6),
+      DocumentText(text:
+      """
+    •	Nuts (almonds, walnuts, macadamia nuts and peanuts).
+    •	dried fruits (raisins, dates, prunes and others).
+    •	High-fat dairy (whole milk, full-fat yogurt, cheese, and ice cream).
+    •	Fats and oils (virgin olive oil, avocado oil).
+    •	Cereals (oats, brown rice).
+    •	Meat (chicken, beef, pork, and lamb; you can also choose fattier cuts of meat).
+    •	Root vegetables (potatoes, sweet potatoes and yams) and other energy-dense foods (dark chocolate, avocado, peanut butter, coconut milk)...
+      """
+      ),
+      DocumentHeading(text: "Nutrition tips for skinny people to help gain weight successfully", level: 6),
+      DocumentText(text:
+      """
+    The important secret in the diet for skinny people to gain weight quickly is to always add milk to the diet.
+    Add healthy fruits to your diet such as avocados, bananas , oranges,...
+    With a diet for skinny people, eating 2 cups of rice per meal is enough. Depending on your appetite, you can add more. However, you should ignore the thought of eating a lot of rice to quickly gain weight. Eating too much rice will only make you "fat", the best is still 2 - 3 cups/serving.
+    Change dishes regularly every day to avoid getting "bored" and create motivation to eat to gain weight effectively. Encourage eating extra meals every day.
+      """
+      ),
+      DocumentHeading(text: "7 Nutritional menus for skinny people to gain weight in 1 week", level: 6),
+      DocumentHeading(text: "Day 1", level: 7),
+      DocumentText(text:
+      """
+    •	Breakfast: 1 bowl of pho, 1 egg and 1 glass of milk, fruit.
+    •	Snack: 1 portion of cereal.
+    •	Lunch: 2 cups of rice, spinach soup with ground meat, 100g beef stir-fried with bell pepper, fruit.
+    •	Snack: 1 plate of fruit.
+    •	Dinner: 2 cups of rice, bone broth with vegetables, stir-fried pork with string beans, fruit juice.
+    •	Snack: 1 small bowl of vermicelli, fruit plate.
+      """,
+      textAlign: TextAlign.left
+      ),
+      DocumentHeading(text: "Day 2", level: 7),
+      DocumentText(text:
+      """
+    •	Breakfast: 1 plate of rice rolls or 1 plate of thinly coated pancake with meat, 1 glass of milk, fruit.
+    •	Snack: 1 smoothie, cake.
+    •	Lunch: 2 cups of rice, stewed pork trotters soup, fried mackerel, boiled or stir-fried vegetables, fruit.
+    •	Snack: 1 portion of soup.
+    •	Dinner: 2 cups of rice, bok choy soup with mushrooms, tofu stuffed with meat, fruit.
+    •	Snack: 1 small bowl of noodles.
+      """,
+      textAlign: TextAlign.left
+      ),
+      DocumentHeading(text: "Day 3", level: 7),
+      DocumentText(text:
+      """
+    •	Breakfast: 1 bowl of vermicelli or 1 bowl of noodles, 1 glass of milk, fruit.
+    •	Snack: 1 portion of cereal.
+    •	Lunch: 2 cups of rice, pumpkin soup with shrimp, stir-fried beef with dragon head, fruit.
+    •	Snack: 1 piece of sweet bread, 1 glass of milk.
+    •	Dinner: 2 cups of rice, jute crab soup, crispy fried tofu with meat, fruit juice.
+    •	Snack: 1 small bowl of vermicelli.
+      """,
+      textAlign: TextAlign.left
+      ),
+      DocumentHeading(text: "Day 4", level: 7),
+      DocumentText(text:
+      """
+    •	Breakfast: 1 plate of steak, 1 egg and 1 glass of milk.
+    •	Snack: 1 bowl of porridge, fruit.
+    •	Lunch: 2 cups of rice, bitter melon soup with meat, sauteed salmon with garlic butter, fruit.
+    •	Snack: 1 glass of fruit juice.
+    •	Dinner: 2 cups of rice, soup, 100g beef, boiled vegetables, fruit.
+    •	Snack: 1 portion of soup.
+      """,
+      textAlign: TextAlign.left
+      ),
+      DocumentHeading(text: "Day 5", level: 7),
+      DocumentText(text:
+      """
+    •	Breakfast: 1 plate of rice with ribs or fried noodles with grilled ribs, 1 glass of milk, fruit.
+    •	Snack: 1 portion of cereal.
+    •	Lunch: 2 cups of rice, spinach soup with luffa, shrimp with spicy and sour sauce, fruit.
+    •	Snack: sweet bread, 1 glass of milk.
+    •	Dinner: 2 cups of rice, sour fish soup, pan-fried pork balls, fruit juice.
+    •	Snack: sweet bread, fruit.
+      """,
+      textAlign: TextAlign.left
+      ),
+      DocumentHeading(text: "Day 6", level: 7),
+      DocumentText(text:
+      """
+    •	Breakfast: 1 bowl of beef noodles or grilled salmon with garlic butter served with bread, 1 glass of milk, fruit.
+    •	Snack: 1 glass of fruit smoothie.
+    •	Lunch: 2 cups of rice, braised meat with eggs, cabbage soup with shrimp, fruit.
+    •	Snack: sweet bread, 1 glass of milk.
+    •	Dinner: 2 cups of rice, mushroom tofu soup, sweet and sour stir-fried squid, fruit juice.
+    •	Snack: sweet bread, fruit.
+      """,
+      textAlign: TextAlign.left
+      ),
+      DocumentHeading(text: "Day 7", level: 7),
+      DocumentText(text:
+      """
+    •	Breakfast: 2 loaves of bread, 2 fried eggs, 1 glass of milk, fruit.
+    •	Snack: 1 plate of salad mixed with vegetables.
+    •	Lunch: 2 cups of rice, steamed red tilapia with onions, zucchini soup with ground meat, fruit.
+    •	Snack: sweet bread, 1 glass of milk.
+    •	Dinner: 2 cups of rice, tofu soup cooked with chives, stir-fried beef with broccoli, fruit juice.
+    •	Snack: sweet bread, fruit.
+      """,
+      textAlign: TextAlign.left
+      ),
+    ],
+    [
+      DocumentHeading(text: "Benefits of maintaining a healthy BMI", level: 6),
+      DocumentText(text:
+      """
+    Why do many people diligently exercise in the gym to get and maintain a standard BMI? There is a very convincing reason that we all have to admit is that when you achieve a good BMI, you will get a lot of things. . Great health will help you stay away from diseases and maintain youth and especially you will not have to spend a lot of money on medicine to treat minor illnesses. Because you already have a great BMI.
+      """
+      ),
+      DocumentText(text:
+      """
+    •	Reduce the risk of heart disease.
+    •	Reduce the risk of stroke.
+    •	Reduces the risk of developing some forms of cancer.
+    •	Control of non-insulin-dependent diabetes.
+    •	Reduce back and joint stress.
+    •	Increase energy levels.
+    •	Optimize the immune system.
+    •	Reduce the risk of osteoporosis.
+    •	Reduce the risk of infertility.
+    •	Reduces the risk of anemia.
+      """,
+      textAlign: TextAlign.left,
+      ),
+      DocumentHeading(text: "Some tips for you to maintain a healthy BMI", level: 6),
+      DocumentText(text:
+      """
+    •	Follow a scientific diet that is good for your health.
+    •	Choose healthy foods. Avoid foods that contain sugar, fat and high calories.
+    •	Eat lots of fruits and vegetables.
+    •	Practice physical activity at least 3 times a week.
+    •	Start good living habits, such as drinking lots of water, getting enough sleep, etc.
+    •	Limit drinking alcohol, alcohol and stimulants.
+    •	Monitor your exact weight regularly, it's best not to wear too much clothing when weighing yourself
+      """,
+      textAlign: TextAlign.left,
+      )
+    ],
+    [
+      DocumentText(text:"I suggest you a nutritional regimen suitable for your BMI, you can refer to it!"),
+      DocumentHeading(text: "Nutrition suitable for overweight and obese people", level: 6),
+      DocumentText(text:
+      """
+    Obesity is caused by prolonged excess energy through the diet, causing the body to accumulate excessive fat. To lose weight and reduce excess fat, you need a reasonable diet and physical activity. Specifically, it is necessary to have a low-energy, balanced diet, low in sugar, enough protein, vitamins, and lots of vegetables and fruits. Gradually reduce the energy in each diet, each week reducing about 300 kcal per day compared to the previous diet, until the corresponding energy reaches the BMI level. Such as:
+      """
+      ),
+      DocumentText(text:
+      """
+    - BMI from 25-29.9: Energy intake per day is 1,500 kcal.
+    - BMI from 30-34.9: Energy intake per day is 1,200 kcal.
+    - BMI from 35-39.9: Energy intake per day is 1,000 kcal.
+    - BMI ≥ 40: Energy intake per day is 800 kcal.
+      """
+      ),
+      DocumentText(text: "Note: In the diet, it is necessary to balance the energy ratio between substances as follows: 15-16% protein, 12-13% lipid, 71-72% glucid. Therefore, you need:"),
+      DocumentText(text:
+      """
+    - Limit fatty and sweet foods, do not eat skin, animal fat, meat broth, cakes, candy, ice cream..., eat more fish than meat. Limit the use of processed foods such as sausages, sausages, fried chicken...
+    - Increase vegetables, less sweet fruits and foods rich in fiber.
+    - Drink enough water 2-2.5 liters per day, you can supplement with vitamin and mineral tablets.
+    - Green tea, grapefruit, orange, ginger, garlic, and sweet chili should be included in the menu to help increase fat burning in the body.
+    - Eat slowly, chew thoroughly, eat in moderation, don't skip breakfast, don't eat dinner after 8 p.m.
+    - Adjust your lifestyle accordingly, don't stay up late or get up late.
+    - Increase physical activity, exercise at least 60 minutes a day, exercise to consume stored energy in the form of fat tissue, increase muscle mass and bone mass thereby reducing muscle laxity body, limiting the growth area of fat cells.    
+      """,
+      textAlign: TextAlign.left,
+      ),
+      DocumentHeading(text: "Suggested menu suitable for energy needs according to BMI index", level: 6),
+      DocumentText(text:
+      """
+    - BMI from 25-29.9 (Overweight): Energy intake per day is 1,500 kcal.
+    - BMI from 30-34.9 (obesity level 1): Energy intake per day is 1,200 kcal.
+    - BMI from 35-39.9 (obesity level 2): Energy intake per day is 1,000 kcal.
+    - BMI ≥ 40 (obesity level 3 - Severe): Energy intake per day is 800 kcal.
+      """,
+      textAlign: TextAlign.left,
+      ),
+      DocumentTable(
+        col: 4,
+        row: 1,
+        data: [
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Menu for obese people"]),
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Energy 800 Kcalories"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Meal", "<<bold>>Dish", "<<bold>>Quantity", "<<bold>>Energy (KCal)"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bright", "Boiled yam", "1 small tuber 100g", "98"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Calcium-fortified milk", "1 glass 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Extra", "Vietnam's Apple", "3 fruits", "27"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Lunch", "Rib porridge (1 small bowl)", "Pork ribs 20g\nSprouts 25g\nOil 3g", "117"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Dragon fruit", "1 piece 50g", "20"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Extra", "Calcium-fortified milk", "1 glass 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Rice", "1/2 medium bowl", "100"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Afternoon", "Gourd soup", "Shrimp 27g\nGourd 100g\nOil 2g", "48"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "String beans stir-fried with beef", "Beef 24g\nGreen beans 30g\nOil 4g", "96"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Siamese banana", "1 medium fruit", "80"]),
+          DocumentTableRow(colWidth: [5,1], data: ["<<center>><<bold>>Total", "<<bold>>808"]),
+          //
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Energy 1000 Kcalories"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Meal", "<<bold>>Dish", "<<bold>>Quantity", "<<bold>>Energy (KCal)"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bright", "Vermicelli soup", "Fresh vermicelli 70g\nFried rice  12g\nPork sausage 9g\nDried bamboo 5g\nSpinach", "148"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Mango", "1/4 fruit", "45"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Extra", "Calcium-fortified milk", "1 glass 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Rice", "1 medium bowl", "200"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Lunch", "Pumpkin soup", "Pork 5g\nPumpkin 80g", "42"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Lean meat braised with pepper", "Lean pork 30g\nOil 4.5g", "80"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Boiled cabbage", "Cabbage 70g", "20"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Extra", "Siamese banana", "1 medium fruit", "54"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Rice", "2/3 medium bowl", "150"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Afternoon", "Amaranth and meat soup", "Pork 5g\nAmaranth 50g", "22"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Fried eel with chilli", "Eel 42g\nOil 6g\nSpice", "94"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Soursop", "1 piece 80g", "40"]),
+          DocumentTableRow(colWidth: [5,1], data: ["<<bold>><<center>>Total", "<<bold>>1006"]),
+          //
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Energy 1200 Kcalories"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Meal", "<<bold>>Dish", "<<bold>>Quantity", "<<bold>>Energy (KCal)"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bright", "Chicken pho (1 small bowl) (1 small bowl)", "Pho cake 80g\nChicken 30g\nSprouts, basil", "241"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Apple", "1/2 medium fruit", "53"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Extra", "Calcium-fortified milk", "1 glass 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Rice", "1 medium bowl", "200"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Lunch", "Bitter melon soup with meat", "Pork 10g\nBitter melon 130g", "34"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Fragrant braised tuna", "Fish 46g\nPineapple 35g\nOil 4.5g", "90"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Boiled bok choy", "Bok choy 63g", "10"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Extra", "Papaya", "1 piece 180g", "63"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Rice", "1 medium bowl", "200"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Watercress soup", "Pork 10g\nWatercress 70g", "24"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Afternoon", "Distillation eggs", "Pork 10g\n1/2 duck egg\nOil 4.5g", "94"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Stir-fried chayote", "Chayote  55g\nOil 4.5g", "50"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Tangerine", "1.5 medium fruit", "42"]),
+          DocumentTableRow(colWidth: [5,1], data: ["<<bold>><<center>>Total", "<<bold>>1212"]),
+          //
+          DocumentTableRow(colWidth: [6], data: ["<<bold>>Energy 1500 Kcalories"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Meal", "<<bold>>Dish", "<<bold>>Quantity", "<<bold>>Energy (KCal)"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Bright", "Chicken vermicelli (1 medium bowl)", "Dry vermicelli 50g\nChicken 30g\nDried bamboo 5g\nSprouts, water spinach", "317"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Grapefruit", "4 packs", "40"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Extra", "Calcium-fortified milk", "1 glass 200ml", "111"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Rice", "1.5 medium bowl", "300"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Lunch", "Salmon sour soup", "Lean fish 30g\nPineapple, tomato 120g\nOil 4.5g", "96"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Braised meat with eggs", "Lean pork 30g\n1/2 egg\nOil 3g", "107"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Boiled spinach", "Water spinach 100g", "23"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<bold>>Extra", "Rambutan", "5 fruits", "70"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["", "Rice", "1 medium bowl", "200"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Asparagus soup with meat", "Meat 10g\nVegetables 70g", "24"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>><<bold>>Afternoon", "Braised shrimp", "Shrimp 50g\nOil 6g\nSpice", "101"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Stir-fried broccoli and carrots", "Broccoli  70g\nCarrot 50g\nOil 3g", "67"]),
+          DocumentTableRow(colWidth: [1,2,2,1], data: ["<<merge>>", "Guava", "1 medium fruit", "53"]),
+          DocumentTableRow(colWidth: [5,1], isLastRow: true, data: ["<<bold>><<center>>Total", "<<bold>>1509"]),
+        ]
+      ),
+      DocumentHeading(text: "To know your \"should\" weight, you can rely on the following formula to calculate your ideal weight:", level: 6),
+      DocumentText(text:
+      """
+Ideal weight = (height (cm) - 100)x0,9
+For example: A person is 1.5 m (150 cm) tall, apply the following formula:
+Ideal weight = (150 - 100 ) x 0.9 = 45 kg.
+      """
+      )      
+    ]
+    ]
+  };
 
   List<Widget> getRecommendation() {
     double bmi = ResultScreen.bmi;
     if(bmi < 18.5) {
-      return recommendationContent[0];
+      return recommendationContent[Language.cur]![0];
     }
     else if(bmi <= 24.9) {
-      return recommendationContent[1];
+      return recommendationContent[Language.cur]![1];
     }
     else if(bmi <= 29.9) {
-      return recommendationContent[2];
+      return recommendationContent[Language.cur]![2];
     }
     else {
-      return recommendationContent[2];
+      return recommendationContent[Language.cur]![2];
     }
   }
 

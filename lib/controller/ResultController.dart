@@ -8,38 +8,33 @@ class ResultController {
 
   ResultController(this._state);
 
-  String getCategory(double bmi) {
-    String res = "";
+  int getCategory(double bmi) {
     if(bmi < 18.5) {
-      res = "Thiếu cân";
+      return 2;
     }
     else if(bmi <= 24.9) {
-      res = "Bình thường";
+      return 3;
     }
     else if(bmi <= 29.9) {
-      res = "Thừa cân";
+      return 4;
     }
     else {
-      res = "Béo phì";
+      return 5;
     }
-    return res;
   }
 
-  String getShortAdvice(double bmi) {
-    String res = "";
+  int getShortAdvice(double bmi) {
     if(bmi < 18.5) {
-      res = "Bạn nên xem lại chế độ ăn uống hoặc siêng ăn thêm bạn nhé";
+      return 6;
     }
     else if(bmi <= 24.9) {
-      res = "Bạn nên tiếp tục duy trì nhé";
+      return 7;
     }
     else if(bmi <= 29.9) {
-      res = "Bạn đang thừa cân rồi, điều chỉnh chế độ ăn uống và luyện tập chăm chỉ hơn nhé";
+      return 8;
     }
     else {
-      res = "Bạn đang trong nhóm này thì khá nguy hiểm nhé. Bạn cần xem lại chế độ dinh dưỡng, tham khảo ý kiến của bác sĩ cũng như cần thuê riêng một bạn PT để hướng dẫn cách tập luyện sao cho hiệu quả nhất";
+      return 9;
     }
-    return res;
   }
-
 }

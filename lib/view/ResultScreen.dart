@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, no_logic_in_create_state
 
 import 'package:bmi_app/controller/ResultController.dart';
+import 'package:bmi_app/language.dart';
 import 'package:bmi_app/view/widget/MyButton.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -15,6 +16,21 @@ class ResultScreen extends StatefulWidget {
 }
 
 class ResultScreenState extends State<ResultScreen> {
+
+  static List<Map<String, String>> strings = [
+    {"vi": "Kết quả", "en": "Result"},  // 0
+    {"vi": "Xem lời khuyên", "en": "View advice"},  // 1
+    {"vi": "Thiếu cân", "en": "Underweight"},  // 2
+    {"vi": "Bình thường", "en": "Normal"},  // 3
+    {"vi": "Thừa cân", "en": "Overweight"}, // 4
+    {"vi": "Béo phì", "en": "Obesity"}, // 5
+    {"vi": "Bạn nên xem lại chế độ ăn uống hoặc siêng ăn thêm bạn nhé", "en": "You should review your diet or eat more diligently"}, // 6
+    {"vi": "Bạn nên tiếp tục duy trì nhé", "en": "You should continue to maintain it"}, // 7
+    {"vi": "Bạn đang thừa cân rồi, điều chỉnh chế độ ăn uống và luyện tập chăm chỉ hơn nhé", "en": "You are overweight , adjust your diet and exercise harder"},  // 8
+    {"vi": "Bạn đang trong nhóm này thì khá nguy hiểm nhé. Bạn cần xem lại chế độ dinh dưỡng, tham khảo ý kiến của bác sĩ cũng như cần thuê riêng một bạn PT để hướng dẫn cách tập luyện sao cho hiệu quả nhất",
+      "en": "If you are in this group, it is quite dangerous. You need to review your nutrition regimen, consult your doctor as well as hire a personal PT to guide you on how to exercise most effectively"},  // 9
+    {}  
+  ];
 
   late ResultController _controller;
 
@@ -50,7 +66,7 @@ class ResultScreenState extends State<ResultScreen> {
                       Container(
                         alignment: Alignment.center,
                         child: Text(
-                          "KẾT QUẢ",
+                          strings[0][Language.cur]!.toUpperCase(),
                           style: TextStyle(
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
@@ -64,12 +80,15 @@ class ResultScreenState extends State<ResultScreen> {
                         width: 15.w,
                         height: 8.h,
                         child: MyButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await Language.toggle();
+                            setState(() {});
+                          },
                           pressedStyle: TextButton.styleFrom(
                             backgroundColor: Colors.blue.shade100
                           ),
-                          child: const Image(
-                            image: AssetImage("assets/images/vietnam_flag.png"),
+                          child: Image(
+                            image: AssetImage("assets/images/${Language.cur == "vi" ? "vietnam_flag" : "england_flag"}.png"),
                           ),
                         ),
                       ),
@@ -109,7 +128,7 @@ class ResultScreenState extends State<ResultScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 2.h),
                   child: Text(
-                    _controller.getCategory(ResultScreen.bmi),
+                    strings[_controller.getCategory(ResultScreen.bmi)][Language.cur]!,
                     style: TextStyle(
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
@@ -120,9 +139,10 @@ class ResultScreenState extends State<ResultScreen> {
                 Container(
                   margin: EdgeInsets.only(top: 3.h),
                   width: 90.w,
-                  alignment: Alignment.center,
+                  height: 20.h,
+                  alignment: Alignment.topCenter,
                   child: Text(
-                    _controller.getShortAdvice(ResultScreen.bmi),
+                    strings[_controller.getShortAdvice(ResultScreen.bmi)][Language.cur]!,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16.sp,
@@ -132,9 +152,7 @@ class ResultScreenState extends State<ResultScreen> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(
-                    top: (MediaQuery.of(context).viewInsets.bottom == 0) ? 5.h : 2.h
-                  ),
+                  margin: EdgeInsets.only(top: 2.h),
                   width: 85.w,
                   child: MyButton(
                     onPressed: () {
@@ -149,7 +167,7 @@ class ResultScreenState extends State<ResultScreen> {
                       backgroundColor: Colors.blue.shade300
                     ),
                     child: Text(
-                      "Xem lời khuyên",
+                      strings[1][Language.cur]!,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14.sp

@@ -1,5 +1,6 @@
 // ignore_for_file: file_names, must_be_immutable
 
+import 'package:bmi_app/language.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -19,6 +20,7 @@ class SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Language.load();
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => false);
     });

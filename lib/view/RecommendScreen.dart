@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:bmi_app/controller/RecommendController.dart';
+import 'package:bmi_app/language.dart';
 import 'package:bmi_app/view/widget/MyButton.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -13,6 +14,10 @@ class RecommendScreen extends StatefulWidget {
 }
 
 class RecommendScreenState extends State<RecommendScreen> {
+
+  static List<Map<String, String>> strings = [
+    {"vi": "Lời khuyên", "en": "Advice"},  // 0
+  ];
 
   late RecommendController _controller;
 
@@ -48,7 +53,7 @@ class RecommendScreenState extends State<RecommendScreen> {
                       Container(
                         alignment: Alignment.center,
                         child: Text(
-                          "LỜI KHUYÊN",
+                          strings[0][Language.cur]!.toUpperCase(),
                           style: TextStyle(
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w900,
@@ -62,12 +67,15 @@ class RecommendScreenState extends State<RecommendScreen> {
                         width: 15.w,
                         height: 8.h,
                         child: MyButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await Language.toggle();
+                            setState(() {});
+                          },
                           pressedStyle: TextButton.styleFrom(
                             backgroundColor: Colors.blue.shade100
                           ),
-                          child: const Image(
-                            image: AssetImage("assets/images/vietnam_flag.png"),
+                          child: Image(
+                            image: AssetImage("assets/images/${Language.cur == "vi" ? "vietnam_flag" : "england_flag"}.png"),
                           ),
                         ),
                       ),
