@@ -63,7 +63,8 @@ class RecommendController {
     •	Ngũ cốc (yến mạch, gạo lứt).
     •	Thịt (thịt gà, thịt bò, thịt lợn và thịt cừu; bạn cũng có thể chọn những miếng thịt béo hơn).
     •	Củ (khoai tây, khoai lang và khoai mỡ) và các loại thực phẩm giàu năng lượng khác (sô cô la đen, bơ, bơ đậu phộng, nước cốt dừa)...
-      """
+      """,
+      textAlign: TextAlign.left,
       ),
       DocumentHeading(text: "Bí quyết trong chế độ dinh dưỡng cho người gầy giúp tăng cân thành công", level: 6),
       DocumentText(text:
@@ -210,7 +211,8 @@ class RecommendController {
     - BMI từ 30-34,9: Năng lượng đưa vào một ngày là 1.200 kcal.
     - BMI từ 35-39,9: Năng lượng đưa vào một ngày là 1.000 kcal.
     - BMI ≥ 40: Năng lượng đưa vào một ngày là 800 kcal.
-      """
+      """,
+      textAlign: TextAlign.left,
       ),
       DocumentText(text: "Lưu ý: Trong chế độ ăn cần cân chỉnh tỷ lệ năng lượng giữa các chất như sau: 15-16% protein, 12-13% lipid, 71-72% glucid. Do đó, bạn cần:"),
       DocumentText(text:
@@ -222,7 +224,8 @@ class RecommendController {
     - Ăn chậm, nhai kỹ, ăn uống điều độ, không bỏ bữa sáng, không ăn tối sau 20h.
     - Điều chỉnh chế độ sinh hoạt phù hợp, không thức khuya, dậy muộn.
     - Tăng cường hoạt động thể lực, tập thể dục ít nhất 60 phút mỗi ngày, vận động nhằm mục đích tiêu hao năng lượng dự trữ dưới dạng mô mỡ, tăng khối cơ bắp và khối xương qua đó giảm các vùng lỏng lẻo của cơ thể, hạn chế khu vực phát triển của các tế bào mỡ.
-      """
+      """,
+      textAlign: TextAlign.left,
       ),
       DocumentHeading(text: "Thực đơn gợi ý phù hợp nhu cầu năng lượng theo chỉ số BMI", level: 6),
       DocumentText(text:
@@ -231,7 +234,8 @@ class RecommendController {
     - BMI từ 30-34,9 (béo phì độ 1): Năng lượng đưa vào một ngày là 1.200 kcal.
     - BMI từ 35-39,9 (béo phì độ 2): Năng lượng đưa vào một ngày là 1.000 kcal.
     - BMI ≥ 40 (béo phì độ 3- Nghiêm trọng): Năng lượng đưa vào một ngày là 800 kcal.
-      """
+      """,
+      textAlign: TextAlign.left,
       ),
       DocumentTable(
         col: 4,
@@ -360,7 +364,8 @@ Cân nặng lý tưởng = (150 - 100 ) x 0,9 = 45 kg.
     •	Cereals (oats, brown rice).
     •	Meat (chicken, beef, pork, and lamb; you can also choose fattier cuts of meat).
     •	Root vegetables (potatoes, sweet potatoes and yams) and other energy-dense foods (dark chocolate, avocado, peanut butter, coconut milk)...
-      """
+      """,
+      textAlign: TextAlign.left,
       ),
       DocumentHeading(text: "Nutrition tips for skinny people to help gain weight successfully", level: 6),
       DocumentText(text:
@@ -507,7 +512,8 @@ Cân nặng lý tưởng = (150 - 100 ) x 0,9 = 45 kg.
     - BMI from 30-34.9: Energy intake per day is 1,200 kcal.
     - BMI from 35-39.9: Energy intake per day is 1,000 kcal.
     - BMI ≥ 40: Energy intake per day is 800 kcal.
-      """
+      """,
+      textAlign: TextAlign.left,
       ),
       DocumentText(text: "Note: In the diet, it is necessary to balance the energy ratio between substances as follows: 15-16% protein, 12-13% lipid, 71-72% glucid. Therefore, you need:"),
       DocumentText(text:

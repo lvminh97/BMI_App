@@ -14,15 +14,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          title: 'BMI',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          debugShowCheckedModeBanner: false,
-          initialRoute: MyRoutes.getInit(),
-          routes: MyRoutes.getRoutes()
-        );
+        if(100.w > 0) {
+          return MaterialApp(
+            title: 'BMI',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            debugShowCheckedModeBanner: false,
+            initialRoute: MyRoutes.getInit(),
+            routes: MyRoutes.getRoutes()
+          );
+        }
+        else {
+          return Container();
+        }
       },
     );
   }
